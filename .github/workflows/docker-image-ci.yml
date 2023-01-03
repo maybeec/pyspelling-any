@@ -14,10 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build and push Docker image
+    - name: Build Docker image
       uses: pmorelli92/github-container-registry-build-push@2.1.0
       with:
         github-push-secret: ${DEPLOY_SECRET}
         docker-image-name: maybeec/pyspelling-any
-        docker-image-tag: $GITHUB_REF_NAME
         build-only: true
